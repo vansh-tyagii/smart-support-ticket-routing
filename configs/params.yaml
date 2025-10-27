@@ -1,0 +1,47 @@
+# Feature and Target definitions for the final plan
+features:
+  # Text features will be combined before TF-IDF
+  subject_col: subject
+  body_col: body
+  combined_text_col: ticket_text # The name we give after combining subject and body
+
+  # Categorical features to be OneHotEncoded
+  categorical_features:
+    - type
+    - language
+    - tag_1
+    - tag_2
+    - tag_3
+    - tag_4
+
+  # Target columns for multi-output prediction
+  targets:
+    - queue
+    - priority
+
+  stratify:
+    - queue  
+
+# Data splitting parameters
+data_split:
+  test_size: 0.2
+  random_state: 42
+
+# Model hyperparameters
+models:
+  # Baseline (Optional to implement later, focus on MLP first)
+  Baseline_RandomForest:
+    n_estimators: 100
+    random_state: 42
+    class_weight: 'balanced' # Handles target imbalance
+
+  # Advanced Model (Our main goal)
+  Advanced_MLP:
+    hidden_layer_sizes: [100, 50] # Example: two hidden layers
+    max_iter: 300
+    activation: 'relu'
+    solver: 'adam'
+    random_state: 42
+    early_stopping: True
+    # Note: class_weight balancing for MLP needs careful handling within MultiOutputClassifier
+    # We might address this with data sampling techniques if needed during training.

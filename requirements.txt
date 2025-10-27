@@ -1,0 +1,11 @@
+pandas
+numpy
+nltk
+scikit-learn
+python-box
+PyYAML
+fastapi
+uvicorn[standard]
+streamlit
+wordcloud
+matplotlib

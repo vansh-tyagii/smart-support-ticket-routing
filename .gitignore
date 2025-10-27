@@ -1,0 +1,33 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+*.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data
+# We never commit large data files to Git!
+data/
+*.csv
+*.json
+
+# Models
+# We never commit large model files
+models/
+*.pkl
+*.joblib
+*.h5
+
+# Logs
+logs/
+*.log
+
+# Notebook cache
+.ipynb_checkpoints
+
+# OS-specific
+.DS_Store
+Thumbs.db

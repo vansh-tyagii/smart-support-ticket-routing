@@ -1,0 +1,32 @@
+logging:
+  log_dir: logs/
+  level: INFO
+  log_filename: "running_logs.log"
+  format: "[%(asctime)s] %(levelname)s - %(module)s - %(message)s"
+
+
+
+# Data paths (using your structure)
+data_paths:
+  source_data: data/processed/cleaned_sstr_data_final_final.csv # Where your clean data is
+  train_data: data/train_test/train.csv          # Where to save train split
+  test_data: data/train_test/test.csv           # Where to save test split
+
+# Model and preprocessor paths (using your structure)
+model_paths:
+  preprocessor: models/preprocessor.pkl         # Saved ColumnTransformer
+  model: models/model_pipeline.pkl              # Saved full pipeline
+  queue_encoder: models/queue_encoder.pkl       # Saved queue encoder
+  priority_encoder: models/priority_encoder.pkl # Saved priority encoder
+
+# Evaluation paths
+evaluation_paths:
+  metrics: logs/metrics.json                    # Where to save evaluation metrics
+
+
+# --- Schema (Defining column types for validation later, optional but good) ---
+# We can add this later if needed
+# data_schema:
+#   text_features: ['ticket_text']
+#   categorical_features: ['type', 'language', 'tag_1', 'tag_2', 'tag_3', 'tag_4']
+#   target_columns: ['queue', 'priority']
